@@ -25,10 +25,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run:
-          npm install n-readlines fs path
-          node build
-          node build_profiles
+      - run: npm install n-readlines fs path
+      - run: node build
+      - run: node build_profiles
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
