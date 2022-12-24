@@ -25,6 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: npm install .
       - run: npm install n-readlines fs path
       - run: node build
       - run: node build_profiles
