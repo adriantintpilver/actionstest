@@ -21,7 +21,11 @@ jobs:
        with:
          name: index
          path: |
-                ./index.html
+                ./
+                !./**
+                !./*.js
+                !./*.scroll
+                !./*.json
                 
        uses: actions/upload-pages-artifact@v1
      - run: node build_profiles
