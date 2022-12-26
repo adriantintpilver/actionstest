@@ -17,8 +17,13 @@ jobs:
      - run: npm install .
      - run: npm install n-readlines fs path
      - run: node build
+     - name: Build actions/upload-pages-artifact
+       with:
+         name: idex
+         path: .
+       uses: actions/upload-pages-artifact@v1
      - run: node build_profiles
-     - name: actions/upload-pages-artifact@v1
+     - name: Build Profies actions/upload-pages-artifact
        with:
          name: pages
          path: ./pages
