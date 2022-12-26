@@ -18,6 +18,9 @@ jobs:
      - run: npm install n-readlines fs path
      - run: node build
      - run: node build_profiles
-     - name: actions/checkout@v3
+     - name: actions/upload-pages-artifact@v1
+       with:
+         name: pages
+         path: ./pages
        uses: actions/upload-pages-artifact@v1 
 
