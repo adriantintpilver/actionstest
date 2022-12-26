@@ -28,6 +28,6 @@ jobs:
          name: pages
          path: |
                 ./pages
-                !./pages/*.tmp
+                !./pages/*.txt
        uses: actions/upload-artifact@v3
 
