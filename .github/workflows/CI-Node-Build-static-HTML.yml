@@ -30,4 +30,6 @@ jobs:
                 ./pages
                 !./pages/*.txt
        uses: actions/upload-artifact@v3
+     - name: Deploy to GitHub Pages
+       uses: actions/deploy-pages@v1
 
