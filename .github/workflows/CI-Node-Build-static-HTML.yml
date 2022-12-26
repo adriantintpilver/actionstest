@@ -43,6 +43,7 @@ jobs:
      steps:
         - name: Sleep for 120 seconds
           run: sleep 120s
+        - uses: actions/checkout@v2
         - uses: actions/download-artifact@v3
           with:
             name: pages
