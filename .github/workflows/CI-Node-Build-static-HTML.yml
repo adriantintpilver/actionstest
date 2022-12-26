@@ -20,13 +20,7 @@ jobs:
      - name: Build actions/upload-pages-artifact
        with:
          name: index
-         path: |
-                ./
-                !./**
-                !./*.js
-                !./*.scroll
-                !./*.json
-                
+         path: index.html 
        uses: actions/upload-pages-artifact@v1
      - run: node build_profiles
      - name: Build Profies actions/upload-pages-artifact
