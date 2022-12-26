@@ -19,3 +19,5 @@ on:
       - run: npm install n-readlines fs path
       - run: node build
       - run: node build_profiles
+      - name Upload Artifact
+      - uses actions/upload-pages-artifact
