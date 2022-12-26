@@ -13,29 +13,35 @@ permissions:
   id-token: write
   
 jobs:
-  # Build job
-  build:
+  job_1:
+    name: 1 of 2
     runs-on: ubuntu-latest
+    # Build job
     steps:
-     - name: Checkout
-       uses: actions/checkout@v3
-     - run: npm install .
-     - run: npm install n-readlines fs path
-     - run: node build
-     - name: Build actions/upload-pages-artifact
-       with:
-         name: index
-         path: index.html 
-       uses: actions/upload-artifact@v3
-     - run: node build_profiles
-     - name: Build Profies actions/upload-pages-artifact
-       with:
-         name: pages
-         path: |
-                ./pages
-                !./pages/*.txt
-       uses: actions/upload-artifact@v3
-     - name: Deploy to GitHub Pages
-       id: deployment
-       uses: actions/deploy-pages@v1
+       - name: Checkout
+         uses: actions/checkout@v3
+       - run: npm install .
+       - run: npm install n-readlines fs path
+       - run: node build
+       - name: Build actions/upload-pages-artifact
+         with:
+           name: index
+           path: index.html 
+         uses: actions/upload-artifact@v3
+       - run: node build_profiles
+       - name: Build Profies actions/upload-pages-artifact
+         with:
+           name: pages
+           path: |
+                  ./pages
+                  !./pages/*.txt
+         uses: actions/upload-artifact@v3
+  job_2:
+     name: 2 of 2
+     runs-on: ubuntu-latest
+     # Build job
+     steps:
+       - name: Deploy to GitHub Pages
+         id: deployment
+         uses: actions/deploy-pages@v1
 
