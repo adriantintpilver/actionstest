@@ -1,23 +1,23 @@
 
 name: CI-Node-Build-static-HTML
 
-on:
-  push:
-    branches: ["main"]
+ on:
+   push:
+     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+   # Allows you to run this workflow manually from the Actions tab
+   workflow_dispatch:
   
-  jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - run: npm install .
-      - run: npm install n-readlines fs path
-      - run: node build
-      - run: node build_profiles
-      - name Upload Artifact
-      - uses actions/upload-pages-artifact
+   jobs:
+   # Build job
+   build:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v3
+       - run: npm install .
+       - run: npm install n-readlines fs path
+       - run: node build
+       - run: node build_profiles
+       - name Upload Artifact
+       - uses actions/upload-pages-artifact
