@@ -41,6 +41,8 @@ jobs:
      runs-on: ubuntu-latest
      # Build job
      steps:
+        - name: Sleep for 120 seconds
+          run: sleep 120s
         - uses: actions/download-artifact@v3
           with:
             name: pages
