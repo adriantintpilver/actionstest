@@ -21,7 +21,7 @@ jobs:
        with:
          name: index
          path: index.html 
-       uses: actions/upload-pages-artifact@v3
+       uses: actions/upload-artifact@v3
      - run: node build_profiles
      - name: Build Profies actions/upload-pages-artifact
        with:
@@ -29,5 +29,5 @@ jobs:
          path: |
                 ./pages
                 !./pages/*.tmp
-       uses: actions/upload-pages-artifact@v3
+       uses: actions/upload-artifact@v3
 
