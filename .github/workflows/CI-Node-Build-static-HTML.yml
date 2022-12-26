@@ -20,12 +20,16 @@ jobs:
      - name: Build actions/upload-pages-artifact
        with:
          name: index
-         path: ./index.html
+         path: |
+                ./index.html
+                
        uses: actions/upload-pages-artifact@v1
      - run: node build_profiles
      - name: Build Profies actions/upload-pages-artifact
        with:
          name: pages
-         path: ./pages/*.html
+         path: |
+                ./pages
+                !./pages/*.tmp
        uses: actions/upload-pages-artifact@v1 
 
