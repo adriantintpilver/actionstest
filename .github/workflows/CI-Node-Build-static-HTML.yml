@@ -36,5 +36,6 @@ jobs:
                 !./pages/*.txt
        uses: actions/upload-artifact@v3
      - name: Deploy to GitHub Pages
+       id: deployment
        uses: actions/deploy-pages@v1
 
