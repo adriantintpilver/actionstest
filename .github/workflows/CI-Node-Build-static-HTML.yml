@@ -35,8 +35,7 @@ jobs:
            path: |
                   ./pages
                   !./pages/*.txt
-       - uses: actions/upload-pages-artifact@v1
-
+         uses: actions/upload-pages-artifact@v1
   job_2:
      name: 2 of 2
      runs-on: ubuntu-latest
