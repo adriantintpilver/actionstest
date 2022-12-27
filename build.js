@@ -56,9 +56,9 @@ fs.readdir(directoryPath, function (err, files) {
             }
            
             var result = data.replace(/<profile_title>/g, profile_title);
-            var result = result.replace(/<profile_copy_link>/g, profile_copy_link);
+            var result = result.replace(/<profile_copy_link>/g, "");
             var result = result.replace(/<profile_copy_name>/g, profile_copy_name);
-            var result = result.replace(/<profile_image>/g, profile_image);
+            var result = result.replace(/<profile_image>/g, "");
             var result = result.replace(/<profile_link>/g, 'pages/'+file.split(".")[0]+'.html');
             console.log(file.split(".")[0])
             html_loop = html_loop + result;  
