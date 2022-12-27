@@ -51,7 +51,7 @@ jobs:
         - name: Deploy to GitHub Pages
           id: deployment
           with:
-            name: pages
+            artifact_name: pages
             path: ./actionstest
           uses: actions/deploy-pages@v1
             
