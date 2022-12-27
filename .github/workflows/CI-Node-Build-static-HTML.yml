@@ -34,13 +34,15 @@ jobs:
        - run: node build_profiles
        - name: Build Profies actions/upload-pages-artifact
          with:
-           name: github-pages
+           name: profile_htmls
            path: |
                   ./pages
                   !./pages/*.txt
          uses: actions/upload-artifact@v3
        - name: Deploy to GitHub Pages
          uses: actions/deploy-pages@v1
+         with:
+          artifact_name: profile_htmls
   publish-screenshots:
     needs: job_1
     environment:
