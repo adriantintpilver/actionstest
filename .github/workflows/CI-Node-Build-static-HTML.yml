@@ -51,6 +51,9 @@ jobs:
         uses: actions/deploy-pages@v1
   job_2:
      needs: job_1
+     environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
      name: 2 of 2
      runs-on: ubuntu-latest
      # Build job
