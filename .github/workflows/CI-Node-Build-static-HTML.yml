@@ -37,12 +37,7 @@ jobs:
                   !./pages/*.txt
      # - uses: actions/upload-artifact@v3
        - uses: actions/upload-pages-artifact@v1
-         with: 
-           name: github-pages
-           path: .automated-rendering/screenshot-capture/screenshots/
-       - name: Deploy to GitHub Pages
-         id: deployment
-         uses: actions/deploy-pages@v1
+
   job_2:
      name: 2 of 2
      runs-on: ubuntu-latest
