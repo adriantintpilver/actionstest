@@ -11,7 +11,12 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   job_1:
     environment:
@@ -43,6 +48,7 @@ jobs:
          uses: actions/deploy-pages@v1
          with:
           artifact_name: profile_htmls
+          token: ${{ secrets.GITHUB_TOKEN }}
   publish-screenshots:
     needs: job_1
     environment:
