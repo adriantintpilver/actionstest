@@ -35,7 +35,6 @@ jobs:
            path: |
                   ./pages
                   !./pages/*.txt
-     # - uses: actions/upload-artifact@v3
        - uses: actions/upload-pages-artifact@v1
 
   job_2:
