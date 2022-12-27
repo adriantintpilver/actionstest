@@ -53,6 +53,6 @@ jobs:
           with:
             name: pages
             path: ./
-        - uses: actions/deploy-pages@v1
+          uses: actions/deploy-pages@v1
             
 
