@@ -52,7 +52,7 @@ jobs:
           id: deployment
           with:
             name: pages
-            path: ./
+            path: ./actionstest
           uses: actions/deploy-pages@v1
             
 
