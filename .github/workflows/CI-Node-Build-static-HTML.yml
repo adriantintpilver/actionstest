@@ -34,7 +34,7 @@ jobs:
        - run: node build_profiles
        - name: Build Profies actions/upload-pages-artifact
          with:
-           name: pages
+           name: github-pages
            path: |
                   ./pages
                   !./pages/*.txt
