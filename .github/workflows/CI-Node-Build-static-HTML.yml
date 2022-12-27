@@ -35,14 +35,25 @@ jobs:
            path: |
                   ./pages
                   !./pages/*.txt
-         uses: actions/upload-pages-artifact@v1
+         uses: actions/upload-artifact@v3
+  publish-screenshots:
+    needs: job_1
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
   job_2:
+     needs: job_1
      name: 2 of 2
      runs-on: ubuntu-latest
      # Build job
      steps:
-        - name: Sleep for 120 seconds
-          run: sleep 120s
+#       - name: Sleep for 120 seconds
+#         run: sleep 30s
         - uses: actions/checkout@v3
         - uses: actions/download-artifact@v3
           with:
@@ -54,5 +65,6 @@ jobs:
             artifact_name: pages
             path: ./actionstest
           uses: actions/deploy-pages@v1
+          
             
 
