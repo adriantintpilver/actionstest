@@ -11,6 +11,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  packages: read 
 
 # Allow one concurrent deployment
 concurrency:
@@ -26,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     # Build job
     steps:
-       - run: echo "github token=${{ secrets.GITHUB_TOKEN }}"
        - name: Checkout
          uses: actions/checkout@v3
        - run: npm install .
