@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     # Build job
     steps:
+       - run: echo "github token=${{ secrets.GITHUB_TOKEN }}"
        - name: Checkout
          uses: actions/checkout@v3
        - run: npm install .
@@ -41,7 +42,6 @@ jobs:
          with:
           artifact_name: index_html
           token: ${{ secrets.GITHUB_TOKEN }}
-       - run: echo "github token=${{ secrets.GITHUB_TOKEN }}"
        - run: node build_profiles
        - name: Build Profies actions/upload-pages-artifact
          with:
