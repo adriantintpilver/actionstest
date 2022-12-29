@@ -38,7 +38,7 @@ jobs:
            path: index.html 
          uses: actions/upload-artifact@v3
        - name: Deploy to GitHub Pages
-         uses: actions/deploy-pages@v1
+         uses: actions/deploy-pages@v2
          with:
           artifact_name: index_html
           token: ${{ secrets.GITHUB_TOKEN }}
