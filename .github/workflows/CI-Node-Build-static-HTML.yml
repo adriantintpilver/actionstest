@@ -8,10 +8,10 @@ on:
   workflow_dispatch:
   
 permissions:
-  contents: read
+  contents: read / write
   pages: write
   id-token: write
-  packages: read 
+  packages: write 
 
 # Allow one concurrent deployment
 concurrency:
@@ -38,7 +38,7 @@ jobs:
            path: index.html 
          uses: actions/upload-artifact@v3
        - name: Deploy to GitHub Pages
-         uses: actions/deploy-pages@v2
+         uses: actions/deploy-pages@v1
          with:
           artifact_name: index_html
           token: ${{ secrets.GITHUB_TOKEN }}
