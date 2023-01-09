@@ -11,7 +11,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
-  packages: read
+  packages: write
 
 # Allow one concurrent deployment
 concurrency:
